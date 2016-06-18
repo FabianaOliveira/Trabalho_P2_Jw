@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://java.sun.com/xml/ns/javaee" 
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+         id="WebApp_ID" version="2.5">
+  <display-name>Cadastro Cliente</display-name>
+  <welcome-file-list>
+    <welcome-file>Login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>UserController</display-name>
+    <servlet-name>UserController</servlet-name>
+    <servlet-class>controller.UserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserController</servlet-name>
+    <url-pattern>/UserController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>processaLogin</servlet-name>
+    <servlet-class> controle.LoginUser </servlet-class>
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>processaLogin</servlet-name>
+        <url-pattern> /validaLogin.do </url-pattern>
+  </servlet-mapping> 
+
+    <servlet>
+    <servlet-name>cadastraLogin</servlet-name>
+    <servlet-class> controle.CadLogin </servlet-class>
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>cadastraLogin</servlet-name>
+        <url-pattern> /exibelogin.do </url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <servlet-name>cadastracliente</servlet-name>
+    <servlet-class> controle.CadCliente </servlet-class>
+  </servlet>
+  <servlet-mapping>
+        <servlet-name>cadastracliente</servlet-name>
+        <url-pattern> /exibecliente.do </url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <servlet-name>cadastraproduto</servlet-name>
+    <servlet-class> controle.CadProduto </servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>cadastraproduto</servlet-name>
+        <url-pattern> /exibeproduto.do </url-pattern>
+  </servlet-mapping> 
+ 
+    <servlet>
+    <servlet-name>excluircliente</servlet-name>
+    <servlet-class> controle.ExcluirCliente </servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>excluircliente</servlet-name>
+        <url-pattern> /excluircliente.do </url-pattern>
+  </servlet-mapping> 
+  
+      <servlet>
+    <servlet-name>excluirproduto</servlet-name>
+    <servlet-class> controle.ExcluirProduto </servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>excluirproduto</servlet-name>
+        <url-pattern> /excluirproduto.do </url-pattern>
+  </servlet-mapping> 
+  
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+   
+</web-app>
